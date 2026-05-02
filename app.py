@@ -42,3 +42,15 @@ def all_data():
 import os
 
 app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+
+
+from flask import Flask, render_template
+import os
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
